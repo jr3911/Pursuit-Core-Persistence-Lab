@@ -10,13 +10,13 @@ import Foundation
 
 struct PhotoWrapper: Codable {
     let hits: [Photo]
-    
-    struct Photo: Codable {
-        let user: String
-        let likes: Int
-        let favorites: Int
-        let tags: String
-        let previewURL: URL
-        let webformatURL: URL
-    }
+}
+
+struct Photo: Codable {
+    let user: String
+    let likes: Int
+    let favorites: Int
+    let tags: String
+    let previewURL: URL
+    let webformatURL: URL
 }
