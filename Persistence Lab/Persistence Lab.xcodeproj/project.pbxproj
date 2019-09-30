@@ -22,6 +22,8 @@
 		08B2FA222342A04F00803758 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FA1F2342A04F00803758 /* AppError.swift */; };
 		08B2FA232342A04F00803758 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FA202342A04F00803758 /* ImageHelper.swift */; };
 		08B2FA242342A04F00803758 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FA212342A04F00803758 /* NetworkHelper.swift */; };
+		08B2FA282342A7CD00803758 /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FA272342A7CD00803758 /* PhotosAPIClient.swift */; };
+		08B2FA2A2342A83D00803758 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FA292342A83D00803758 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +52,12 @@
 		08B2FA13234290D800803758 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		08B2FA172342946400803758 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		08B2FA192342995400803758 /* FavoritePhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotoTableViewCell.swift; sourceTree = "<group>"; };
-		08B2FA1C23429D9B00803758 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		08B2FA1C23429D9B00803758 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secrets.swift; path = ../Models/Secrets.swift; sourceTree = "<group>"; };
 		08B2FA1F2342A04F00803758 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		08B2FA202342A04F00803758 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		08B2FA212342A04F00803758 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		08B2FA272342A7CD00803758 /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
+		08B2FA292342A83D00803758 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +144,7 @@
 		08B2FA1B23429D8A00803758 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				08B2FA1C23429D9B00803758 /* Secrets.swift */,
+				08B2FA292342A83D00803758 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,9 +152,11 @@
 		08B2FA1E23429FF100803758 /* Networking Files */ = {
 			isa = PBXGroup;
 			children = (
+				08B2FA1C23429D9B00803758 /* Secrets.swift */,
 				08B2FA1F2342A04F00803758 /* AppError.swift */,
 				08B2FA202342A04F00803758 /* ImageHelper.swift */,
 				08B2FA212342A04F00803758 /* NetworkHelper.swift */,
+				08B2FA272342A7CD00803758 /* PhotosAPIClient.swift */,
 			);
 			path = "Networking Files";
 			sourceTree = "<group>";
@@ -258,11 +264,13 @@
 			files = (
 				08B2F9F423428D5900803758 /* AlbumViewController.swift in Sources */,
 				08B2FA232342A04F00803758 /* ImageHelper.swift in Sources */,
+				08B2FA282342A7CD00803758 /* PhotosAPIClient.swift in Sources */,
 				08B2FA1D23429D9B00803758 /* Secrets.swift in Sources */,
 				08B2FA222342A04F00803758 /* AppError.swift in Sources */,
 				08B2FA242342A04F00803758 /* NetworkHelper.swift in Sources */,
 				08B2FA14234290D800803758 /* PhotoCollectionViewCell.swift in Sources */,
 				08B2F9F023428D5900803758 /* AppDelegate.swift in Sources */,
+				08B2FA2A2342A83D00803758 /* Photo.swift in Sources */,
 				08B2FA1A2342995400803758 /* FavoritePhotoTableViewCell.swift in Sources */,
 				08B2FA12234290C000803758 /* DetailPhotoViewController.swift in Sources */,
 				08B2FA182342946400803758 /* FavoritesViewController.swift in Sources */,
