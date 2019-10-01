@@ -9,5 +9,6 @@
 import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
-    
+    //MARK: IBOutlets
+    @IBOutlet weak var albumPhotoImageView: UIImageView!
 }
