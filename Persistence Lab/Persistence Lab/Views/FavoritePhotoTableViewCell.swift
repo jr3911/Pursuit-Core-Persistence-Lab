@@ -9,7 +9,10 @@
 import UIKit
 
 class FavoritePhotoTableViewCell: UITableViewCell {
-
+    
+    //MARK: IBOutlets
+    @IBOutlet weak var favoritePhotoImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
