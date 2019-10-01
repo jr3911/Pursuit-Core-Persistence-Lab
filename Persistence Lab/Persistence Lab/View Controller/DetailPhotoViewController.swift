@@ -9,22 +9,40 @@
 import UIKit
 
 class DetailPhotoViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    //mARK: Properties
+    var photo: Photo!
+    
+    //MARK: IBOutlets
+    @IBOutlet weak var detailPhotoImageView: UIImageView!
+    @IBOutlet weak var submitterNameLabel: UILabel!
+    @IBOutlet weak var tagsLabel: UILabel!
+    
+    //MARK: IBActions
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: LifeCycle Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpDetailViews()
     }
-    */
+    
+    private func setUpDetailViews() {
+        DispatchQueue.main.async {
+            ImageHelper.shared.getImage(url: self.photo.webformatURL) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let webImage):
+                    DispatchQueue.main.async {
+                        self.detailPhotoImageView.image = webImage
+                    }
+                }
+            }
+        }
+        
+        submitterNameLabel.text = "Submitted by: \(photo.user)"
+        tagsLabel.text = "Tags: \(photo.tags)"
+    }
 
 }
