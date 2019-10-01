@@ -45,11 +45,40 @@ class FavoritesViewController: UIViewController {
 
 }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//MARK: DataSource Methods
+extension FavoritesViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Favorite Photos"
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return favorites.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = favoritePhotosTableVIew.dequeueReusableCell(withIdentifier: "favoritePhotoCell", for: indexPath) as! FavoritePhotoTableViewCell
+        let currentFavPhoto = favorites[indexPath.row]
+        
+        DispatchQueue.main.async {
+            ImageHelper.shared.getImage(url: currentFavPhoto.webformatURL) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let favImage):
+                    DispatchQueue.main.async {
+                        cell.favoritePhotoImageView.image = favImage
+                    }
+                }
+            }
+        }
+        return cell
+    }
+    
+    
+}
 
 }
