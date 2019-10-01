@@ -9,7 +9,16 @@
 import UIKit
 
 class AlbumViewController: UIViewController {
-
+    //MARK: Properties
+    var photoResults: [Photo] = [] {
+        didSet {
+            photoResultsCollectionView.reloadData()
+        }
+    }
+    
+    //MARK: IBOutlets
+    @IBOutlet weak var photoResultsCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
