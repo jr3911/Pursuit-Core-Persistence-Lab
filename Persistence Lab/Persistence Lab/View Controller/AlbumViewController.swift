@@ -21,8 +21,28 @@ class AlbumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configureCollectionView()
+        loadPhotos()
     }
+    
+    //MARK: Custom Functions
+    private func configureCollectionView() {
+        photoResultsCollectionView.dataSource = self
+        photoResultsCollectionView.delegate = self
+    }
+    
+    private func loadPhotos() {
+        PhotosAPIClient.manager.getPhotos { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let arrPhotos):
+                self.photoResults = arrPhotos
+            }
+        }
+    }
+    
+}
 
 
 }
