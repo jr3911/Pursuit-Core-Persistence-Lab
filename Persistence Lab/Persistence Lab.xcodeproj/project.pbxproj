@@ -24,6 +24,8 @@
 		08B2FA242342A04F00803758 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FA212342A04F00803758 /* NetworkHelper.swift */; };
 		08B2FA282342A7CD00803758 /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FA272342A7CD00803758 /* PhotosAPIClient.swift */; };
 		08B2FA2A2342A83D00803758 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FA292342A83D00803758 /* Photo.swift */; };
+		08C4E14F234311210021DD8C /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4E14E234311210021DD8C /* PersistenceHelper.swift */; };
+		08C4E1512343114F0021DD8C /* FavoritePhotoPersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4E1502343114F0021DD8C /* FavoritePhotoPersistenceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		08B2FA212342A04F00803758 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		08B2FA272342A7CD00803758 /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
 		08B2FA292342A83D00803758 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		08C4E14E234311210021DD8C /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
+		08C4E1502343114F0021DD8C /* FavoritePhotoPersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotoPersistenceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				08B2FA15234290E200803758 /* View Controller */,
 				08B2FA16234290EA00803758 /* Views */,
 				08B2FA1E23429FF100803758 /* Networking Files */,
+				08C4E14D234311080021DD8C /* Persistence Files */,
 				08B2F9F823428D5A00803758 /* Assets.xcassets */,
 				08B2F9EF23428D5900803758 /* AppDelegate.swift */,
 				08B2F9F123428D5900803758 /* SceneDelegate.swift */,
@@ -159,6 +164,15 @@
 				08B2FA272342A7CD00803758 /* PhotosAPIClient.swift */,
 			);
 			path = "Networking Files";
+			sourceTree = "<group>";
+		};
+		08C4E14D234311080021DD8C /* Persistence Files */ = {
+			isa = PBXGroup;
+			children = (
+				08C4E14E234311210021DD8C /* PersistenceHelper.swift */,
+				08C4E1502343114F0021DD8C /* FavoritePhotoPersistenceHelper.swift */,
+			);
+			path = "Persistence Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,10 +278,12 @@
 			files = (
 				08B2F9F423428D5900803758 /* AlbumViewController.swift in Sources */,
 				08B2FA232342A04F00803758 /* ImageHelper.swift in Sources */,
+				08C4E1512343114F0021DD8C /* FavoritePhotoPersistenceHelper.swift in Sources */,
 				08B2FA282342A7CD00803758 /* PhotosAPIClient.swift in Sources */,
 				08B2FA1D23429D9B00803758 /* Secrets.swift in Sources */,
 				08B2FA222342A04F00803758 /* AppError.swift in Sources */,
 				08B2FA242342A04F00803758 /* NetworkHelper.swift in Sources */,
+				08C4E14F234311210021DD8C /* PersistenceHelper.swift in Sources */,
 				08B2FA14234290D800803758 /* PhotoCollectionViewCell.swift in Sources */,
 				08B2F9F023428D5900803758 /* AppDelegate.swift in Sources */,
 				08B2FA2A2342A83D00803758 /* Photo.swift in Sources */,
