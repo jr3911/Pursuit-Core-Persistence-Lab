@@ -59,6 +59,7 @@
                     <tabBarItem key="tabBarItem" title="Album" id="MFa-1o-WoA"/>
                     <connections>
                         <outlet property="photoResultsCollectionView" destination="I9X-OA-R4w" id="jiq-ob-Fxh"/>
+                        <outlet property="photoSearchBar" destination="gHq-5X-gDN" id="ZKE-Iv-t1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
