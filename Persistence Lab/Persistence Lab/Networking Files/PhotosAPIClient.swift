@@ -13,13 +13,8 @@ class PhotosAPIClient {
     static let manager = PhotosAPIClient()
     private let endpointString = "https://pixabay.com/api/?key=\(Secrets().apiKey)&q="
     
-    func getPhotos(searchString: String?, completionHandler: @escaping (Result<[Photo], AppError>) -> () ) {
-        var urlString = endpointString
-        if let searchString = searchString {
-            urlString.append(searchString)
-        }
-        
-        guard let url = URL(string: urlString) else {
+    func getPhotos(completionHandler: @escaping (Result<[Photo], AppError>) -> () ) {
+        guard let url = URL(string: endpointString) else {
             completionHandler(.failure(.badURL))
             return
         }
@@ -30,8 +25,8 @@ class PhotosAPIClient {
                 completionHandler(.failure(.noDataReceived))
             case .success(let data):
                 do {
-                    let arrPhotos = try JSONDecoder().decode([Photo].self, from: data)
-                    completionHandler(.success(arrPhotos))
+                    let arrPhotosInfo = try JSONDecoder().decode(PhotoWrapper.self, from: data)
+                    completionHandler(.success(arrPhotosInfo.hits))
                 } catch {
                     completionHandler(.failure(.couldNotParseJSON(rawError: error)))
                 }
