@@ -19,6 +19,11 @@ class DetailPhotoViewController: UIViewController {
     
     //MARK: IBActions
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+        do {
+            try favoriteTheImage()
+        } catch {
+            print(error)
+        }
     }
     
     //MARK: LifeCycle Methods
@@ -44,5 +49,12 @@ class DetailPhotoViewController: UIViewController {
         submitterNameLabel.text = "Submitted by: \(photo.user)"
         tagsLabel.text = "Tags: \(photo.tags)"
     }
-
+    
+    private func favoriteTheImage() throws -> () {
+        do {
+            try FavoritePhotoPersistenceHelper.manager.save(newPhoto: self.photo)
+        } catch {
+            throw error
+        }
+    }
 }
