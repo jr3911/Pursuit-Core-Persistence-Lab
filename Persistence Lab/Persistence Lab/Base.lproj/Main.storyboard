@@ -152,6 +152,13 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TqZ-DE-hNm">
                                                     <rect key="frame" x="87" y="26" width="240" height="193"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGm-et-u6q">
+                                                    <rect key="frame" x="344" y="24" width="64" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Options">
+                                                        <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="TqZ-DE-hNm" secondAttribute="bottom" constant="15" id="02q-wm-qkK"/>
@@ -162,6 +169,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="favoritePhotoImageView" destination="TqZ-DE-hNm" id="0LW-t3-C9j"/>
+                                            <outlet property="optionsButton" destination="aGm-et-u6q" id="m2A-OA-z5g"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

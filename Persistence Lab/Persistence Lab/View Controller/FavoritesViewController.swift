@@ -63,6 +63,9 @@ extension FavoritesViewController: UITableViewDataSource {
         let cell = favoritePhotosTableVIew.dequeueReusableCell(withIdentifier: "favoritePhotoCell", for: indexPath) as! FavoritePhotoTableViewCell
         let currentFavPhoto = favorites[indexPath.row]
         
+        cell.optionsButton.tag = indexPath.row
+        cell.optionsButton.addTarget(self, action: #selector(printButtonTag(sender:)), for: .touchUpInside)
+        
         DispatchQueue.main.async {
             ImageHelper.shared.getImage(url: currentFavPhoto.webformatURL) { (result) in
                 switch result {
@@ -78,6 +81,15 @@ extension FavoritesViewController: UITableViewDataSource {
         return cell
     }
     
+    @objc func printButtonTag(sender: UIButton) {
+        do {
+            try FavoritePhotoPersistenceHelper.manager.delete(indexOfElementTBDeleted: sender.tag)
+            loadFavoritePhotos()
+        } catch {
+            print(error)
+        }
+    }
+    
     
 }
 
@@ -87,3 +99,4 @@ extension FavoritesViewController: UITableViewDelegate {
         return 200
     }
 }
+

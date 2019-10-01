@@ -23,6 +23,14 @@ struct PersistenceHelper<T: Codable> {
         try serializedData.write(to: url, options: Data.WritingOptions.atomic)
     }
     
+    func delete(indexOfElementTBDeleted: Int) throws {
+        var elements = try getObjects()
+        guard !elements.isEmpty else { return }
+        elements.remove(at: indexOfElementTBDeleted)
+        let serializedData = try PropertyListEncoder().encode(elements)
+        try serializedData.write(to: url, options: Data.WritingOptions.atomic)
+    }
+    
     init(fileName: String){
         self.fileName = fileName
     }

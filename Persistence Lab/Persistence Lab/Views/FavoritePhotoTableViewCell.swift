@@ -12,6 +12,7 @@ class FavoritePhotoTableViewCell: UITableViewCell {
     
     //MARK: IBOutlets
     @IBOutlet weak var favoritePhotoImageView: UIImageView!
+    @IBOutlet weak var optionsButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

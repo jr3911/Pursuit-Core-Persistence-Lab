@@ -15,6 +15,10 @@ struct FavoritePhotoPersistenceHelper {
         try persistenceHelper.save(newElement: newPhoto)
     }
 
+    func delete(indexOfElementTBDeleted: Int) throws {
+        try persistenceHelper.delete(indexOfElementTBDeleted: indexOfElementTBDeleted)
+    }
+    
     func getFavoritePhotos() throws -> [Photo] {
         return try persistenceHelper.getObjects()
     }

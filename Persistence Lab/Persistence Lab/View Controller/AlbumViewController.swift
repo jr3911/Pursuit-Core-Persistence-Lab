@@ -77,7 +77,7 @@ extension AlbumViewController: UICollectionViewDataSource {
         let currentPhoto = filteredPhotoResults[indexPath.row]
         
         DispatchQueue.main.async {
-            ImageHelper.shared.getImage(url: currentPhoto.previewURL) { (result) in
+            ImageHelper.shared.getImage(url: currentPhoto.webformatURL) { (result) in
                 switch result {
                 case .failure(let error):
                     print(error)
