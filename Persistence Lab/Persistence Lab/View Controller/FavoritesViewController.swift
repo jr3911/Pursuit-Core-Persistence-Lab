@@ -9,7 +9,17 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
-
+    //MARK: Properties
+    var favorites: [Photo] = [] {
+        didSet {
+            favoritePhotosTableVIew.reloadData()
+        }
+    }
+    
+    //MARK: IBOutlets
+    @IBOutlet weak var favoritePhotosTableVIew: UITableView!
+    
+    //MARK: LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 

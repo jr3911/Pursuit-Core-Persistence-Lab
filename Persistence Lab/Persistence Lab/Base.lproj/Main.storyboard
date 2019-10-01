@@ -160,6 +160,9 @@
                                                 <constraint firstItem="TqZ-DE-hNm" firstAttribute="centerX" secondItem="IVK-Tb-MGs" secondAttribute="centerX" id="l17-DI-iTd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favoritePhotoImageView" destination="TqZ-DE-hNm" id="0LW-t3-C9j"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -174,6 +177,9 @@
                         <viewLayoutGuide key="safeArea" id="IVR-xv-hgy"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" id="JSO-bg-xQZ"/>
+                    <connections>
+                        <outlet property="favoritePhotosTableVIew" destination="gYk-Ph-feb" id="Pse-Qc-Hqf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syd-Nf-EIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
