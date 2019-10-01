@@ -109,3 +109,11 @@ extension AlbumViewController: UISearchBarDelegate {
         self.searchString = searchText.lowercased()
     }
 }
+
+extension AlbumViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailPhotoVC = storyboard?.instantiateViewController(identifier: "DetailPhotoViewController") as! DetailPhotoViewController
+        detailPhotoVC.photo = filteredPhotoResults[indexPath.item]
+        navigationController?.pushViewController(detailPhotoVC, animated: true)
+    }
+}
