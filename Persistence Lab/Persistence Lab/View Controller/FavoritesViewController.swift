@@ -81,4 +81,9 @@ extension FavoritesViewController: UITableViewDataSource {
     
 }
 
+//MARK: Delegate Methods
+extension FavoritesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
 }
