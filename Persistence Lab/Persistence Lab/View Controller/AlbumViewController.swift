@@ -44,6 +44,36 @@ class AlbumViewController: UIViewController {
     
 }
 
-
+//MARK: UICollectionView DataSource Methods
+extension AlbumViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photoResults.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = photoResultsCollectionView.dequeueReusableCell(withReuseIdentifier: "photoCollectionViewCell", for: indexPath) as? PhotoCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let currentPhoto = photoResults[indexPath.row]
+        
+        DispatchQueue.main.async {
+            ImageHelper.shared.getImage(url: currentPhoto.previewURL) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let previewImage):
+                    DispatchQueue.main.async {
+                        cell.albumPhotoImageView.image = previewImage
+                        cell.albumPhotoImageView.contentMode = .scaleAspectFit
+                        
+                    }
+                }
+            }
+        }
+        
+        return cell
+    }
+    
 }
 
