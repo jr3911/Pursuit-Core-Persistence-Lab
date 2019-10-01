@@ -22,13 +22,28 @@ class FavoritesViewController: UIViewController {
     //MARK: LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureFavTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadFavoritePhotos()
+    }
+    
+    //MARK: Custom Functions
+    private func loadFavoritePhotos() {
+        do {
+            self.favorites = try FavoritePhotoPersistenceHelper.manager.getFavoritePhotos()
+        } catch {
+            print(error)
+        }
+    }
+    
+    private func configureFavTableView() {
+        favoritePhotosTableVIew.dataSource = self
+        favoritePhotosTableVIew.delegate = self
+    }
 
-    /*
-    // MARK: - Navigation
+}
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
